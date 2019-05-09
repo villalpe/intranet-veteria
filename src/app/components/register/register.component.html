@@ -122,21 +122,21 @@
             <div class="controls">
               <label>Surname:</label>
               <input type="text" class="form-control" id="phone" required data-validation-required-message="Please enter your Surname." name="surname" #surname="ngModel" [(ngModel)]="user.surname">
-              <span *ngIf="!name.valid && name.touched">Los apellidos son obligatorios</span>
+              <span *ngIf="!surname.valid && surname.touched">Los apellidos son obligatorios</span>
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Email Address:</label>
               <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address." name="email" #email="ngModel" [(ngModel)]="user.email">
-              <span *ngIf="!name.valid && name.touched">El correo electronico es obligatorio</span>
+              <span *ngIf="!email.valid && email.touched">El correo electronico es obligatorio</span>
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Password:</label>
               <input type="password" class="form-control" id="phone" required data-validation-required-message="Please enter your password." name="password" #password="ngModel" [(ngModel)]="user.password">
-              <span *ngIf="!name.valid && name.touched">El password es obligatorio</span>
+              <span *ngIf="!password.valid && password.touched">El password es obligatorio</span>
             </div>
           </div>
           <div id="success"></div>

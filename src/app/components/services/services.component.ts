@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
   public title: string;
+  public title1: string;
   constructor() { 
   	this.title = 'Intranet Veteria Labs';
+  	this.title1 = 'Veteria Labs';
   }
 
   ngOnInit() {
