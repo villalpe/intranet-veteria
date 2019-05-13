@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Intranet - Veteria Labs</title>
+  <script src="https://cdn.rawgit.com/download/glyphicons/0.1.0/glyphicons.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">{{title}}</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/principal']" [routerLinkActive]="['actived']">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/services']" [routerLinkActive]="['actived']">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="['actived']">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Portfolio
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Blog
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+              <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+              <a class="dropdown-item" href="blog-post.html" [routerLink]="['/blogp']" [routerLinkActive]="['actived']">Blog Post</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Other Pages
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+              <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+              <a class="dropdown-item" href="faq.html">FAQ</a>
+              <a class="dropdown-item" href="404.html">404</a>
+              <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+            </div>
+          </li>
+          <li class="nav-item" *ngIf="!identity">
+            <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['actived']"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+          </li>
+          <li class="nav-item" *ngIf="!identity">
+            <a class="nav-link" [routerLink]="['/register']" [routerLinkActive]="['actived']"><span class="glyphicon glyphicon-user"></span>Register</a>
+          </li>
+          <!--Aqui ponemos la imagen del usuario-->
+          <li class="avatar" *ngIf="identity" style="margin-top: 8px;margin-left: 10px;">
+                <img src="{{url +  'get-image-file/' + identity.image}}" />
+          </li>
+          <!--Aqui ponemos cuando esta autenticado el usuario como admin el menu de administrador-->
+          <li class="nav-item dropdown" *ngIf="identity">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{identity.name}}
+            </a>
+            <div *ngIf="identity && identity.role == 'ROLE_ADMIN'" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a [routerLink]="['/admin-panel']" class="dropdown-item" href="#">Administracion</a>
+              <a [routerLink]="['/mis-datos']" class="dropdown-item" href="#">Mis datos</a>
+              <a (click)="logout()" class="´pointer" class="dropdown-item" href="#">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  </body>
+
+</html>
+
 <router-outlet></router-outlet>

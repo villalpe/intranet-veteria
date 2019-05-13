@@ -1,19 +1,31 @@
-<div class="col-lg-4 display-5" style="font-size: 15px;">
+<div class="col-lg-6">
 	<h3>{{title}}</h3>
 	<div class="sidebar-admin" data-example-id="sample-nav-stacked">
 		<ul class="nav nav-pills nav-stacked nav-pill-stacked-example">
 			<li role="presentation" [routerLinkActive]="['active']">
-				<a [routerLink]="['listado']">Listado</a>
-			</li>
-			<!--<li role="presentation" [routerLinkActive]="['active']">
-				<a [routerLink]="['crear']">Crear</a>
+				<a [routerLink]="['listado']">RH</a>
 			</li>
 			<li role="presentation" [routerLinkActive]="['active']">
-				<a [routerLink]="['csvimport']">Facturas</a>
-			</li>-->
+				<a [routerLink]="['crear']">Facturas</a>
+			</li>
+			<li role="presentation" [routerLinkActive]="['active']">
+				<a [routerLink]="['csvimport']">Encuestas</a>
+			</li>
+      <li role="presentation" [routerLinkActive]="['active']">
+        <a [routerLink]="['listado']">Carga de Archivos</a>
+      </li>
+      <li role="presentation" [routerLinkActive]="['active']">
+        <a [routerLink]="['crear']">Documentos</a>
+      </li>
+      <li role="presentation" [routerLinkActive]="['active']">
+        <a [routerLink]="['csvimport']">Noticias RH</a>
+      </li>
 		</ul>
 	</div>
 </div>
-<div class="col-lg-8">
-	<router-outlet></router-outlet>
+
+<div class="col-lg-12">
+		<router-outlet></router-outlet>
 </div>
+
+	  

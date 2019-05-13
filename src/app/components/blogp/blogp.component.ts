@@ -1,13 +1,11 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
-//import { Router, ActivatedRoute, Params } from '@angular/router';
-//import { UserService } from '../../services/user1.service';
-//import { GLOBAL } from '../../services/global';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html'
+  selector: 'app-blogp',
+  templateUrl: './blogp.component.html',
 })
-export class HomeComponent implements OnInit {
+export class BlogpComponent implements OnInit {
+
   public title: string;
   public title1: string;
   public identity;
@@ -25,6 +23,5 @@ export class HomeComponent implements OnInit {
   ngOnInit(){
     //this.identity = this._userService.getIdentity();
   }
-  
 
 }

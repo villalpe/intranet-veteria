@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './main.component.html'
 })
 export class MainComponent {
-  title = 'Panel de Administracion';
+  title = 'Panel de Usuario Intranet';
 }

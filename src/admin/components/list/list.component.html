@@ -1,1 +1,72 @@
-<p>{{title}}</p>
+<div class="col-lg-12" [@fadeLateral]>
+	<h3>{{title}}</h3>
+	<div class="row">
+		<div class="col-lg-1">Buscar:</div>		
+		<div class="col-lg-3">
+			<input type="text" [(ngModel)]="busqueda" />
+		</div>
+		<div class="label label-success" *ngIf="busqueda">
+			Estas buscando: {{busqueda}}
+		</div>
+	</div>
+	<br/>
+	<table class="table table-hover table-striped table-bordered">
+		<thead class="thead-default thead-light">
+			<tr>
+				<th>Nombre Proveedor</th>
+				<th>Numero de factura</th>
+				<th>Descripcion</th>
+				<th>Total</th>
+				<th>Año</th>
+				<th>Mes</th>
+				<th>Pagado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let invoice of invoices | search: busqueda">
+				<td>{{invoice.name_provider}}</td>
+				<td>{{invoice.invoice_number}}</td>
+				<td>{{invoice.description}}</td>
+				<td>{{invoice.total}}</td>
+				<td>{{invoice.year}}</td>
+				<td>{{invoice.month}}</td>
+				<td>{{invoice.status}}</td>
+				<td>
+					<a [routerLink]="['/invoice', invoice._id]" class="btn btn-sm btn-success">
+						<span class="glyphicon glyphicon-eye-open"></span>
+						Ver
+					</a>
+					<a [routerLink]="['/admin-panel/editar', invoice._id]" class="btn btn-sm btn-primary">
+						<span class="glyphicon glyphicon-pencil"></span>
+						Editar
+					</a>
+					<a href="#myModal-{{invoice._id}}" role="button" data-toggle="modal" class="btn btn-sm btn-danger">
+						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						Eliminar
+					</a>
+
+					<!-- Modal HTML -->
+					<div id="myModal-{{invoice._id}}" class="modal">
+					    <div class="modal-dialog">
+						    <div class="modal-content">
+						        <div class="modal-header">
+						            <h5 class="modal-title">Estas seguro?</h5>
+						            <button type="button" class="close" data-dismiss="modal">&times;</button>               
+						        </div>
+						        <div class="modal-body">
+						            <p>Seguro que quieres eliminar esta factura <strong>{{invoice.name_provider}}</strong>?</p>
+   						            <p>Seguro que quieres eliminar esta factura <strong>{{invoice._id}}</strong>?</p>
+						            <p class="text-secondary"><small>Si borras esta factura no podras recuperarla.</small></p>
+						        </div>
+						        <div class="modal-footer">
+						            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+						            <button type="button" class="btn btn-danger" (click)="deleteInvoice(invoice._id)">Borrar</button>
+						        </div>
+						    </div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

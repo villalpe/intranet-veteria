@@ -4,11 +4,11 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
 body {
-  padding-top: 28px;
+  padding-top: 12px;
 }
 
 .carousel-item {
-  height: 65vh;
+  height: 80vh;
   min-height: 300px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
