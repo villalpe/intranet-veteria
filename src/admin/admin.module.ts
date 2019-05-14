@@ -12,6 +12,7 @@ import { AddComponent } from './components/add/add.component';
 import { ListComponent } from './components/list/list.component';
 import { EditComponent } from './components/edit/edit.component';
 import { RhComponent } from './components/rh/rh.component';
+import { SidemenuComponent} from './components/sidemenu/sidemenu.component';
 //import { ErrorComponent } from './components/error/error.component';
 //import { CsvimportComponent } from './components/csvimport/csvimport.component';
 
@@ -29,7 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ListComponent,
     EditComponent,
     RhComponent,
-    //ErrorComponent,
+    SidemenuComponent,
     SearchPipe
     //CsvimportComponent
   ],

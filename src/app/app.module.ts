@@ -16,6 +16,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BlogpComponent } from './components/blogp/blogp.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BlogpComponent } from './components/blogp/blogp.component';
     ContactComponent,
     LoginComponent,
     RegisterComponent,
-    BlogpComponent
+    BlogpComponent,
+    UserEditComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

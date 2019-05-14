@@ -4,10 +4,10 @@ import { UserService } from '../../../app/services/user1.service';
 import { GLOBAL } from '../../../app/services/global';
 
 @Component({
-  selector: 'admin-main',
-  templateUrl: './main.component.html'
+  selector: 'admin-sidemenu',
+  templateUrl: './sidemenu.component.html'
 })
-export class MainComponent {
+export class SidemenuComponent {
   public identity;
   public url: string;	
   public title: string;

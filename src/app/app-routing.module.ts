@@ -7,7 +7,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BlogpComponent } from './components/blogp/blogp.component';
-
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const routes: Routes = [
 	{path: '', component: HomeComponent},
@@ -18,7 +19,10 @@ const routes: Routes = [
 	{path: 'contact', component: ContactComponent},
 	{path: 'login', component: LoginComponent},
 	{path: 'register', component: RegisterComponent},
-	{path: 'blogp', component: BlogpComponent}
+	{path: 'mis-datos', component: UserEditComponent},
+	{path: 'sidebar', component: SidebarComponent},
+	{path: 'blogp', component: BlogpComponent},
+	{path: 'sidebar', component: SidebarComponent}
 ];
 
 @NgModule({
