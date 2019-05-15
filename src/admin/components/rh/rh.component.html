@@ -1,1 +1,81 @@
- <p>{{title}}</p>
+  <div class="col-lg-10" style="font-size: 12px;margin-left: 240px;" [@fadeLateral]>
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Register
+      <small>{{title}}</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Register</li>
+    </ol>
+
+    <!-- Resister Form -->
+    <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+        <h3>Por favor Registrate</h3>
+        <div class="alert alert-success" *ngIf="status == 'success'">
+			Su registro a la Intranet ha sido correctamente. <a [routerLink]="['/login']">Identificate aqui</a>
+		</div>
+		<div class="alert alert-danger" *ngIf="status == 'error'">
+			Tenemos ya registrado este correo en la Intranet..vuelva a intentar
+		</div>
+        <form name="sentMessage" #pollForm="ngForm" (ngSubmit)="onSumbit(pollForm)">
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Pregunta 1:</label>
+              <input type="text" class="form-control" id="question_one" required data-validation-required-message="Please enter your name." name="question_one" #question_one="ngModel" [(ngModel)]="poll.question_one">
+              <p class="help-block"></p>
+              <span *ngIf="!question_one.valid && question_one.touched">Debe de responder la primer pregunta</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Pregunta2:</label>
+              <input type="text" class="form-control" id="phone" required data-validation-required-message="Please enter your Surname." name="surname" #surname="ngModel" [(ngModel)]="user.surname">
+              <span *ngIf="!surname.valid && surname.touched">Los apellidos son obligatorios</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Email Address:</label>
+              <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address." name="email" #email="ngModel" [(ngModel)]="user.email">
+              <span *ngIf="!email.valid && email.touched">El correo electronico es obligatorio</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Password:</label>
+              <input type="password" class="form-control" id="phone" required data-validation-required-message="Please enter your password." name="password" #password="ngModel" [(ngModel)]="user.password">
+              <span *ngIf="!password.valid && password.touched">El password es obligatorio</span>
+            </div>
+          </div>
+          <div id="success"></div>
+          <!-- For success/fail messages -->
+          <button type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!pollForm.form.valid">Registrarse</button>
+        </form>
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+</div>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; {{title}}</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
