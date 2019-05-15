@@ -16,7 +16,7 @@ const adminRoutes: Routes = [
 	{	path: 'admin-panel', component: MainComponent,
 		canActivate: [AdminGuard],
 		children: [
-			//{path: '', redirectTo: 'admin-panel', pathMatch: 'full'},
+			{path: '', redirectTo: 'admin-panel', pathMatch: 'full'},
 			{path: 'sidemenu', component: SidemenuComponent},
 			{path: 'listado', component: ListComponent},
 			{path: 'crear', component: AddComponent},

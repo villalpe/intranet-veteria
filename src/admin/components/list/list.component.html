@@ -1,8 +1,8 @@
-<div class="col-lg-12" [@fadeLateral]>
+<div class="col-lg-10" style="font-size: 12px;margin-left: 240px;" [@fadeLateral]>
 	<h3>{{title}}</h3>
 	<div class="row">
 		<div class="col-lg-1">Buscar:</div>		
-		<div class="col-lg-3">
+		<div class="col-lg-2">
 			<input type="text" [(ngModel)]="busqueda" />
 		</div>
 		<div class="label label-success" *ngIf="busqueda">
@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<br/>
-	<table class="table table-hover table-striped table-bordered">
+	<table class="table table-hover table-striped table-bordered" style="font-size: 12px;">
 		<thead class="thead-default thead-light">
 			<tr>
 				<th>Nombre Proveedor</th>
@@ -32,15 +32,15 @@
 				<td>{{invoice.month}}</td>
 				<td>{{invoice.status}}</td>
 				<td>
-					<a [routerLink]="['/invoice', invoice._id]" class="btn btn-sm btn-success">
+					<a [routerLink]="['/invoice', invoice._id]" class="btn btn-sm btn-success" style="font-size: 10px;">
 						<span class="glyphicon glyphicon-eye-open"></span>
 						Ver
 					</a>
-					<a [routerLink]="['/admin-panel/editar', invoice._id]" class="btn btn-sm btn-primary">
+					<a [routerLink]="['/admin-panel/editar', invoice._id]" class="btn btn-sm btn-primary" style="font-size: 10px;">
 						<span class="glyphicon glyphicon-pencil"></span>
 						Editar
 					</a>
-					<a href="#myModal-{{invoice._id}}" role="button" data-toggle="modal" class="btn btn-sm btn-danger">
+					<a href="#myModal-{{invoice._id}}" role="button" data-toggle="modal" class="btn btn-sm btn-danger" style="font-size: 10px;">
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						Eliminar
 					</a>
@@ -71,6 +71,6 @@
 	</table>
 </div>
 
-<div class="col-lg-6">
+<!--<div class="col-lg-6">
 		<router-outlet></router-outlet>
-</div>
+</div>-->
