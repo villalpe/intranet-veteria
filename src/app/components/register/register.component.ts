@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
 	public title: string;
 	public title1: string;
 	public user: User;
-  	public status: string;
+  public status: string;
   constructor(
   		private _route: ActivatedRoute,
   		private _router: Router,

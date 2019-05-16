@@ -1,51 +1,70 @@
-<div class="wrapper">
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>{{title}}</h3>
-            <h3>{{title1}}</h3>
+<div class="col-lg-10" style="font-size: 12px;margin-left: 240px;" [@fadeLateral]>
+    <h3>{{title}}</h3>
+    <div class="row">
+        <div class="col-lg-1">Buscar:</div>     
+        <div class="col-lg-2">
+            <input type="text" [(ngModel)]="busqueda" />
         </div>
+        <div class="label label-success" *ngIf="busqueda">
+            Estas buscando: {{busqueda}}
+        </div>
+    </div>
+    <br/>
+    <table class="table table-hover table-striped" style="font-size: 12px;">
+        <thead class="thead-default thead-light">
+            <tr>
+                <th>Usuario</th>
+                <th>Pregunta 1</th>
+                <th>Pregunta 2</th>
+                <th>Pregunta 3</th>
+                <th>Pregunta 4</th>
+                <th>Pregunta 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let poll of polls | search: busqueda">
+                <td>{{poll.user.name}}</td>
+                <td>{{poll.question_one}}</td>
+                <td>{{poll.question_two}}</td>
+                <td>{{poll.question_three}}</td>
+                <td>{{poll.question_four}}</td>
+                <td>{{poll.question_five}}</td>
+                <td>
+                    <a [routerLink]="['/poll', poll._id]" class="btn btn-sm btn-success" style="font-size: 10px;">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        Ver
+                    </a>
+                    <a [routerLink]="['/admin-panel/editar', poll._id]" class="btn btn-sm btn-primary" style="font-size: 10px;">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Editar
+                    </a>
+                    <a href="#myModal-{{poll._id}}" role="button" data-toggle="modal" class="btn btn-sm btn-danger" style="font-size: 10px;">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        Eliminar
+                    </a>
 
-        <ul class="list-unstyled components">
-            <p>{{identity.name}} {{identity.surname}}</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Recursos Humanos</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Encuestas</a>
-                    </li>
-                    <li>
-                        <a href="#">Perfil Usuario</a>
-                    </li>
-                    <li>
-                        <a href="#">Dias Festivos</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a [routerLink]="['/admin-panel/listado']">Facturacion</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
+                    <!-- Modal HTML -->
+                    <div id="myModal-{{poll._id}}" class="modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Estas seguro?</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>               
+                                </div>
+                                <div class="modal-body">
+                                    <p>Seguro que quieres eliminar esta factura <strong>{{poll.id}}</strong>?</p>
+                                    <p>Seguro que quieres eliminar esta factura <strong>{{poll._id}}</strong>?</p>
+                                    <p class="text-secondary"><small>Si borras esta factura no podras recuperarla.</small></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-danger" (click)="deletePoll(poll._id)">Borrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

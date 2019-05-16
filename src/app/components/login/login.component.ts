@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
 	public title1: string;
 	public user: User;
 	public identity;
-  	public token;
-  	public status: string;
+  public token;
+  public status: string;
   constructor(
   	  private _route: ActivatedRoute,
   	  private _router: Router,

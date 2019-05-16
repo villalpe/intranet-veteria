@@ -51,7 +51,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddComponent,
     ListComponent,
     EditComponent,
-    RhComponent
+    RhComponent, 
+    SidemenuComponent
     //ErrorComponent
     ]
 })

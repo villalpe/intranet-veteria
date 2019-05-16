@@ -8,7 +8,7 @@ import { User } from '../models/user';
 import { GLOBAL } from './global';
 
 @Injectable()
-export class InvoiceService {
+export class PollService {
 	public url: string;
 
 	constructor(
@@ -17,8 +17,8 @@ export class InvoiceService {
 		this.url = GLOBAL.url;
 	}
 
-	addPoll(token, invoice){
-		let params = JSON.stringify(invoice);
+	addPoll(token, poll){
+		let params = JSON.stringify(poll);
 		let headers = new Headers({
 			'Content-Type': 'application/json',
 			'Authorization': token
@@ -59,3 +59,4 @@ export class InvoiceService {
 		return this._http.delete(this.url+'delete-poll/'+id, options)
 						.map(res => res.json());
 	}
+}

@@ -20,8 +20,9 @@ const adminRoutes: Routes = [
 			{path: 'sidemenu', component: SidemenuComponent},
 			{path: 'listado', component: ListComponent},
 			{path: 'crear', component: AddComponent},
-			{path: 'editar/:id', component: EditComponent}
-			{path: 'rh', components: RhComponent}
+			{path: 'editar/:id', component: EditComponent},
+			{path: 'rh', component: RhComponent},
+			{path: 'list-encuestas', component: SidemenuComponent}
 		]
 	},
 	{path: 'listado-del-panel', component: ListComponent},
