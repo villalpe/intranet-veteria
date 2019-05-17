@@ -2,25 +2,25 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 declare let $: any;
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Poll } from '../../../app/models/poll';
+import { UploadFile } from '../../../app/models/uploadfile';
 import { User } from '../../../app/models/user';
 import { GLOBAL } from '../../../app/services/global';
-import { PollService } from '../../../app/services/poll.service';
+import { UloadfService } from '../../../app/services/uloadf.service';
 import { UserService } from '../../../app/services/user1.service';
 
 import { fadeLateral } from '../../../admin/animation/animation';
 
 @Component({
-  selector: 'admin-sidemenu',
-  templateUrl: './sidemenu.component.html',
-  providers: [PollService, UserService],
+  selector: 'admin-listfiles',
+  templateUrl: './listfiles.component.html',
+  providers: [UloadfService, UserService],
   animations: [fadeLateral]
 })
-export class SidemenuComponent implements OnInit {
+export class ListFilesComponent implements OnInit {
    public title: string;
    public url: string;
    public status: string;
-   public polls: Poll[];
+   public ufiles: UploadFile[];
    public user: User[];
    public token;
    public busqueda;
@@ -28,27 +28,28 @@ export class SidemenuComponent implements OnInit {
    constructor(
       private _route: ActivatedRoute,
       private _router: Router,
-      private _pollService: PollService,
+      private _ufilesService: UloadfService,
       private _userService: UserService
     ){
-      this.title = 'Encuestas Recursos Humanos';
+      this.title = 'Lista de Archivos';
       this.url = GLOBAL.url;
       this.token = this._userService.getToken();
       //this.animal = new Animal('','','',2017,'','');
    }
 
    ngOnInit(){
-     this.getPolls(); 
+     this.getFiles(); 
    }
 
-    getPolls(){
-      console.log('componente.list-polls funciona correctamente');
-      this._pollService.getPolls().subscribe(
+    getFiles(){
+      console.log('componente.list-files funciona correctamente');
+      this._ufilesService.getUfiles().subscribe(
         response => {
-          if(!response.polls){
+          if(!response.ufiles){
 
           }else{
-            this.polls = response.polls;  
+            this.ufiles = response.ufiles;
+            console.log(response.ufiles);
           }
         },
         error => {
@@ -57,7 +58,7 @@ export class SidemenuComponent implements OnInit {
       );
    }
 
-   deletePoll(id){
+   /*deletePoll(id){
     $('#myModal-'+id).modal('hide');
     console.log("Id desde el component.listPoll: "+id);
     this._pollService.deletePoll(this.token, id).subscribe(
@@ -73,6 +74,6 @@ export class SidemenuComponent implements OnInit {
           alert('Error en el servidor');
       }
     );
-   }
+   }*/
  
 }

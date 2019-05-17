@@ -29,7 +29,7 @@ export class ListComponent implements OnInit {
    	  private _invoiceService: InvoiceService,
       private _userService: UserService
    	){
-   	  this.title = 'Listado Facturas';
+   	  this.title = 'Listado Facturas Proveedor';
    	  this.url = GLOBAL.url;
       this.token = this._userService.getToken();
       //this.animal = new Animal('','','',2017,'','');
