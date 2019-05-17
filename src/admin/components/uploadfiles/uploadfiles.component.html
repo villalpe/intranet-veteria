@@ -1,0 +1,61 @@
+<div class="col-lg-10" style="font-size: 14px;margin-left: 240px;" [@fadeLateral]>
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+      <small>{{title2}}</small>
+    </h1>
+  <!-- Page Content -->
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+        <h3>Carga de Archivos</h3>
+        <div class="alert alert-success" *ngIf="status == 'success'">
+          El archivo ha sido enviado correctamente!
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+          Hubo un error al tratar de enviar el archivo..vuelva a intentar
+        </div>
+    <form #formAddAnimal="ngForm" (ngSubmit)="onSubmit()">
+    <p> 
+      <label>Descripcion del archivo</label>
+      <textarea name="description" #description="ngModel" [(ngModel)]="ufile.description" class="form-control" required></textarea>
+      <span *ngIf="!description.valid && description.touched">
+        La descripcion es un campo obligatorio
+      </span>
+    </p>  
+    <p>
+      <label>Año</label>
+      <input type="text" name="year" #year="ngModel" [(ngModel)]="ufile.year" class="form-control" required />
+      <span *ngIf="!year.valid && year.touched">
+        El año es un campo obligatorio
+      </span>
+    </p>
+    <p> 
+      <label>Mes</label>
+      <input type="text" name="month" #month="ngModel" [(ngModel)]="ufile.month" class="form-control" required />
+      <span *ngIf="!month.valid && month.touched">
+        El mes es un campo obligatorio
+      </span>
+    </p>
+
+    <!--<div *ngIf="is_edit && ufile.fileu">
+      <div class="image_for_edit">
+        <img src="{{url + 'get-image-file-animal/'+ ufile.fileu}}" />    
+      </div>
+    </div>-->
+
+    <p>
+      <label>Subir Archivo PDF</label>
+      <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+    </p>
+
+    <input type="submit" name="" value="{{title1}}" class="btn btn-success" />
+
+</form>
+</div>
+  <!-- /.container -->
+</div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

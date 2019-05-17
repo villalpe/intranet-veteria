@@ -65,6 +65,9 @@
                 <li>
                   <a href="#">Reportes</a>
                 </li>
+                <li>
+                  <a href="#">Archivos PDF</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -93,17 +96,17 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a>
               <i class="far fa-gem"></i>
               <span>Components</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">General</a>
+                  <a [routerLink]="['upload-files']">Carga de Archivos</a>
                 </li>
                 <li>
-                  <a href="#">Panels</a>
+                  <a [routerLink]="['upload-files']">Listado de Archivos</a>
                 </li>
                 <li>
                   <a href="#">Tables</a>

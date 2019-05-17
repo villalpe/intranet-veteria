@@ -87,6 +87,10 @@
               <a [routerLink]="['/mis-datos']" class="dropdown-item" href="#">Mis datos</a>
               <a (click)="logout()" class="´pointer" class="dropdown-item" href="#">Logout</a>
             </div>
+            <div *ngIf="identity && identity.role == 'ROLE_USER'" class="dropdown-menu dropdown-menu-right"aria-labelledby="navbarDropdownBlog">
+              <a [routerLink]="['/mis-datos']" class="dropdown-item" href="#">Mis datos</a>
+              <a (click)="logout()" class="´pointer" class="dropdown-item" href="#">Logout</a>
+            </div>
           </li>
         </ul>
       </div>

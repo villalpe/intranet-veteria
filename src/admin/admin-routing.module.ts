@@ -7,6 +7,7 @@ import { ListComponent } from './components/list/list.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SidemenuComponent} from './components/sidemenu/sidemenu.component';
 import { RhComponent } from './components/rh/rh.component';
+import { UploadFilesComponent } from './components/uploadfiles/uploadfiles.component';
 //import { ErrorComponent } from './components/error/error.component';
 //import { CsvimportComponent } from './components/csvimport/csvimport.component';
 //Guards
@@ -22,7 +23,8 @@ const adminRoutes: Routes = [
 			{path: 'crear', component: AddComponent},
 			{path: 'editar/:id', component: EditComponent},
 			{path: 'rh', component: RhComponent},
-			{path: 'list-encuestas', component: SidemenuComponent}
+			{path: 'list-encuestas', component: SidemenuComponent},
+			{path: 'upload-files', component: UploadFilesComponent}
 		]
 	},
 	{path: 'listado-del-panel', component: ListComponent},
