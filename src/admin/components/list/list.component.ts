@@ -22,6 +22,7 @@ export class ListComponent implements OnInit {
    public invoices: Invoice[];
    public token;
    public busqueda;
+   public hide;
 
    constructor(
    	  private _route: ActivatedRoute,
@@ -32,6 +33,7 @@ export class ListComponent implements OnInit {
    	  this.title = 'Listado Facturas Proveedor';
    	  this.url = GLOBAL.url;
       this.token = this._userService.getToken();
+      this.hide = false;
       //this.animal = new Animal('','','',2017,'','');
    }
 

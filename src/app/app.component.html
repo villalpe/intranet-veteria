@@ -28,7 +28,7 @@
             <a class="nav-link" [routerLink]="['/principal']" [routerLinkActive]="['actived']">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/services']" [routerLinkActive]="['actived']">Services</a>
+            <a class="nav-link" [routerLink]="['/services']" [routerLinkActive]="['actived']">Productos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="['actived']">Contact</a>
@@ -82,15 +82,16 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{identity.name}}
             </a>
-            <div *ngIf="identity && identity.role == 'ROLE_ADMIN'" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+            <div *ngIf="identity" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
               <a [routerLink]="['/admin-panel']" class="dropdown-item" href="#">Administracion</a>
               <a [routerLink]="['/mis-datos']" class="dropdown-item" href="#">Mis datos</a>
               <a (click)="logout()" class="´pointer" class="dropdown-item" href="#">Logout</a>
             </div>
-            <div *ngIf="identity && identity.role == 'ROLE_USER'" class="dropdown-menu dropdown-menu-right"aria-labelledby="navbarDropdownBlog">
+            <!--<div *ngIf="identity && identity.role == 'ROLE_USER'" class="dropdown-menu dropdown-menu-right"aria-labelledby="navbarDropdownBlog">
+              <a [routerLink]="['/admin-panel']" class="dropdown-item" href="#">Administracion</a>
               <a [routerLink]="['/mis-datos']" class="dropdown-item" href="#">Mis datos</a>
               <a (click)="logout()" class="´pointer" class="dropdown-item" href="#">Logout</a>
-            </div>
+            </div>-->
           </li>
         </ul>
       </div>

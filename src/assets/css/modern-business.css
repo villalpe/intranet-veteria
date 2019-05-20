@@ -553,3 +553,21 @@ body {
 .chiller-theme .sidebar-footer>a:last-child {
     border-right: none;
 }
+
+#box{
+  margin-top: 1px;
+  width: 60%;
+  float: left;
+}
+
+#box h2{
+  font-size: 28px;
+}
+
+#acordeon{
+  font-family: Helvetica, Arial;
+  margin-top: 20px;
+  line-height: 20px;
+  text-align: justify;
+  background: #801C46;
+}

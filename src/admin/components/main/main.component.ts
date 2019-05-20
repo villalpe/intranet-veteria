@@ -14,6 +14,7 @@ export class MainComponent {
   public url: string;	
   public title: string;
   public title1: string;
+  public hide: boolean;
 
   constructor(
   	private _route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class MainComponent {
   	this.title = 'Panel Usuario';
   	this.title1 = 'Veteria Labs';
   	this.url = GLOBAL.url;
+    this.hide = true;
   }
 
   ngDoCheck(){

@@ -9,6 +9,8 @@ import { SidemenuComponent} from './components/sidemenu/sidemenu.component';
 import { RhComponent } from './components/rh/rh.component';
 import { UploadFilesComponent } from './components/uploadfiles/uploadfiles.component';
 import { ListFilesComponent } from './components/listfiles/listfiles.component';
+import { CommiComponent } from './components/commi/commi.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
 //import { ErrorComponent } from './components/error/error.component';
 //import { CsvimportComponent } from './components/csvimport/csvimport.component';
 //Guards
@@ -16,7 +18,7 @@ import { AdminGuard } from '../app/services/admin.guard';
 
 const adminRoutes: Routes = [
 	{	path: 'admin-panel', component: MainComponent,
-		canActivate: [AdminGuard],
+		//canActivate: [AdminGuard],
 		children: [
 			{path: '', redirectTo: 'admin-panel', pathMatch: 'full'},
 			{path: 'sidemenu', component: SidemenuComponent},
@@ -26,7 +28,9 @@ const adminRoutes: Routes = [
 			{path: 'rh', component: RhComponent},
 			{path: 'list-encuestas', component: SidemenuComponent},
 			{path: 'upload-files', component: UploadFilesComponent},
-			{path: 'list-files', component: ListFilesComponent}
+			{path: 'list-files', component: ListFilesComponent},
+			{path: 'commi', component: CommiComponent},
+			{path: 'noticias', component: NoticiasComponent}
 		]
 	},
 	{path: 'listado-del-panel', component: ListComponent},

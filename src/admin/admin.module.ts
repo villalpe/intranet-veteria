@@ -15,6 +15,8 @@ import { RhComponent } from './components/rh/rh.component';
 import { SidemenuComponent} from './components/sidemenu/sidemenu.component';
 import { UploadFilesComponent } from './components/uploadfiles/uploadfiles.component';
 import { ListFilesComponent } from './components/listfiles/listfiles.component';
+import { CommiComponent } from './components/commi/commi.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
 //import { ErrorComponent } from './components/error/error.component';
 //import { CsvimportComponent } from './components/csvimport/csvimport.component';
 
@@ -35,7 +37,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SidemenuComponent,
     SearchPipe,
     UploadFilesComponent,
-    ListFilesComponent
+    ListFilesComponent,
+    CommiComponent,
+    NoticiasComponent
     //CsvimportComponent
   ],
   imports: [
@@ -58,7 +62,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RhComponent, 
     SidemenuComponent,
     UploadFilesComponent,
-    ListFilesComponent
+    ListFilesComponent,
+    CommiComponent,
+    NoticiasComponent
     //ErrorComponent
     ]
 })

@@ -1,3 +1,14 @@
+    <div class="col-lg-10" style="font-size: 14px;margin-left: 240px;margin-top: 40px;">
+      <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3 breadcrumb">
+        <small>Panel Administracion Usuarios - Bienvenido</small>
+      </h1>
+     </div>
+   </div>
+
+
 <div class="col-lg-1" style="font-size: 12px;">
 	<div class="page-wrapper chiller-theme toggled">
 	  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
@@ -20,7 +31,7 @@
           <span class="user-name">{{identity.name}}
             <strong>{{identity.surname}}</strong>
           </span>
-          <span class="user-role">Administrator</span>
+          <span class="user-role">{{identity.role}}</span>
           <span class="user-status">
             <i class="fa fa-circle"></i>
             <span>Online</span>
@@ -83,7 +94,7 @@
                   <a [routerLink]="['rh']">Encuestas
                   </a>
                 </li>
-                <li>
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
                   <a [routerLink]="['list-encuestas']">Analisis de Encuestas</a>
                 </li>
                 <li>
@@ -105,7 +116,7 @@
                 <li>
                   <a [routerLink]="['upload-files']">Carga de Archivos</a>
                 </li>
-                <li>
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
                   <a [routerLink]="['list-files']">Listado de Archivos</a>
                 </li>
                 <li>
@@ -121,9 +132,9 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a [routerLink]="['commi']">
               <i class="fa fa-chart-line"></i>
-              <span>Charts</span>
+              <span>Comunicacion Interna</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
@@ -143,9 +154,9 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a [routerLink]="['noticias']">
               <i class="fa fa-globe"></i>
-              <span>Maps</span>
+              <span>Noticias</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
