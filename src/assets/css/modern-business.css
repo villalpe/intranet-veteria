@@ -571,3 +571,7 @@ body {
   text-align: justify;
   background: #801C46;
 }
+
+a {
+  cursor: pointer;
+}

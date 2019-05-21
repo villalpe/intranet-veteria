@@ -63,5 +63,11 @@ export class MainComponent {
           $(".page-wrapper").addClass("toggled");
         });
       }
+
+        logout(){
+          localStorage.clear();
+          this.identity = null;
+          this._router.navigate(['/']);
+        }
    }
   

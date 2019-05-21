@@ -71,7 +71,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">Estados de Cuenta</a>
+                  <a href="#">Antiguedad de Saldos</a>
                 </li>
                 <li>
                   <a href="#">Reportes</a>
@@ -103,13 +103,16 @@
                 <li>
                   <a href="#">Dias Festivos</a>
                 </li>
+                <li>
+                  <a href="#">Induccion a la Empresa</a>
+                </li>
               </ul>
             </div>
           </li>
           <li class="sidebar-dropdown">
             <a>
               <i class="far fa-gem"></i>
-              <span>Components</span>
+              <span>Utilerias</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
@@ -132,39 +135,39 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a [routerLink]="['commi']">
+            <a>
               <i class="fa fa-chart-line"></i>
-              <span>Comunicacion Interna</span>
+              <span>Comunicacion</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Pie chart</a>
+                  <a [routerLink]="['commi']">Comunicacion Interna</a>
                 </li>
                 <li>
-                  <a href="#">Line chart</a>
+                  <a href="#">Comunicacion Interna 1</a>
                 </li>
                 <li>
-                  <a href="#">Bar chart</a>
+                  <a href="#">Comunicacion Interna 2</a>
                 </li>
                 <li>
-                  <a href="#">Histogram</a>
+                  <a href="#">Comunicacion Interna 3</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a [routerLink]="['noticias']">
+            <a>
               <i class="fa fa-globe"></i>
               <span>Noticias</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Google maps</a>
+                  <a [routerLink]="['noticias']">Noticias</a>
                 </li>
                 <li>
-                  <a href="#">Open street map</a>
+                  <a href="#">Noticias 1</a>
                 </li>
               </ul>
             </div>
@@ -175,7 +178,7 @@
           <li>
             <a href="#">
               <i class="fa fa-book"></i>
-              <span>Documentation</span>
+              <span>Documentation Calidad</span>
               <span class="badge badge-pill badge-primary">Beta</span>
             </a>
           </li>
@@ -188,7 +191,7 @@
           <li>
             <a href="#">
               <i class="fa fa-folder"></i>
-              <span>Examples</span>
+              <span>Business Intelligence</span>
             </a>
           </li>
         </ul>
@@ -209,7 +212,7 @@
         <i class="fa fa-cog"></i>
         <span class="badge-sonar"></span>
       </a>
-      <a href="#">
+      <a (click)="logout()">
         <i class="fa fa-power-off"></i>
       </a>
     </div>
