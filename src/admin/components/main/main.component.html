@@ -117,13 +117,15 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
+                  <i class="fa fa-book"></i>
                   <a [routerLink]="['upload-files']">Carga de Archivos</a>
+                  <span class="badge badge-pill badge-primary">Beta</span>
                 </li>
                 <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
                   <a [routerLink]="['list-files']">Listado de Archivos</a>
                 </li>
                 <li>
-                  <a href="#">Tables</a>
+                  <a [routerLink]="['subir-archivos']">Subir Archivos</a>
                 </li>
                 <li>
                   <a href="#">Icons</a>
@@ -218,7 +220,7 @@
     </div>
   </nav>
   <!-- sidebar-wrapper  -->
-  <main class="page-content">
+  <!--<main class="page-content">
     <div class="container-fluid">
       <h2>Pro Sidebar</h2>
       <hr>
@@ -259,7 +261,7 @@
           </div>          
         </div>
       </div>
-    </div>
+    </div>-->
 
     <!--<div class="col-lg-10" style="font-size: 14px;margin-left: 240px;margin-top: 95px;" [@fadeLateral]>
       <div class="container">-->
@@ -272,7 +274,7 @@
      </div>-->
 
 
-  </main>
+  <!--</main>-->
   <!-- page-content" -->
 </div>
 <!-- page-wrapper -->

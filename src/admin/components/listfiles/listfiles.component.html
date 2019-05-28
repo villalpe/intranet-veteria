@@ -21,21 +21,21 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let ufile of ufiles | search: busqueda">
+            <tr *ngFor="let ufile of ufiles; let i = index;">
                 <td>{{ufile.user.name}}</td>
                 <td>{{ufile.description}}</td>
                 <td>{{ufile.year}}</td>
                 <td>{{ufile.month}}</td>
                 <td>{{ufile.fileu}}</td>
                 <td>
-                    <a [routerLink]="['/ufile', ufile._id]" class="btn btn-sm btn-success" style="font-size: 14px;">
+                    <a class="btn btn-sm btn-success" style="font-size: 14px;" (click)="download(i)">
                         <span class="glyphicon glyphicon-eye-open"></span>
-                        Ver
+                        Download
                     </a>
-                    <a [routerLink]="['/admin-panel/editar', ufile._id]" class="btn btn-sm btn-primary" style="font-size: 14px;">
+                    <!--<a [routerLink]="['/admin-panel/editar', ufile._id]" class="btn btn-sm btn-primary" style="font-size: 14px;">
                         <span class="glyphicon glyphicon-pencil"></span>
                         Editar
-                    </a>
+                    </a>-->
                     <a href="#myModal-{{ufile._id}}" role="button" data-toggle="modal" class="btn btn-sm btn-danger" style="font-size: 14px;">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                         Eliminar

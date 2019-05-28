@@ -34,7 +34,7 @@ export class UploadFilesComponent implements OnInit {
       private _uploadService: UploadService 
     ){
     this.title = 'Subir Archivos PDF';
-    this.title1 = 'Mandar archivo';
+    this.title1 = 'Subir archivo';
     this.title2 = 'Veteria Labs';
     this.url = GLOBAL.url;
     this.identity = this._userService.getIdentity();
@@ -62,6 +62,7 @@ export class UploadFilesComponent implements OnInit {
           //Subida de la imagen
              this._uploadService.makeFileRequest(this.url+'upload-file/'+this.ufile._id, [], this.filesToUpload, this.token, 'fileu')
                   .then((result: any) => {
+                    console.log(result);
                     this.ufile.fileu = result.fileu;
                   //this._router.navigate(['/admin-panel/listado']);
               }); 

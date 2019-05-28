@@ -32,6 +32,10 @@ export class UloadfService {
 		return this._http.get(this.url+'getufiles').map(res => res.json());
 	}
 
+	getUfile(id){
+		return this._http.get(this.url+'getufile/'+id).map(res => res.json());
+	}
+
 	/*getAnimal(id){
 		return this._http.get(this.url+'get-animal/'+id).map(res => res.json());
 	}

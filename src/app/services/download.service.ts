@@ -15,7 +15,7 @@ export class UploadService{
 		this.url = GLOBAL.url;
 	}
 
-	//Metodo para hacer una peticion AJAX y poder subir un archivo
+	//Metodo para hacer una peticion AJAX y poder bajar un archivo
 	makeFileRequest(url: string, params: Array<string>, files: Array<File>, token: string, name: string){
 		return new Promise((resolve, reject) => {
 			var formData: any = new FormData();

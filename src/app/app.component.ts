@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.identity = this._userService.getIdentity();
-   	console.log("La foto de este usuario es: "+this.identity.image);
   }
   ngDoCheck(){
     this.identity = this._userService.getIdentity();

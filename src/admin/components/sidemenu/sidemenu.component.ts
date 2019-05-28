@@ -48,7 +48,8 @@ export class SidemenuComponent implements OnInit {
           if(!response.polls){
 
           }else{
-            this.polls = response.polls;  
+            this.polls = response.polls;
+            console.log(response.polls);
           }
         },
         error => {

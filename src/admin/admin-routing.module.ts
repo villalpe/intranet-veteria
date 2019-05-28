@@ -11,6 +11,8 @@ import { UploadFilesComponent } from './components/uploadfiles/uploadfiles.compo
 import { ListFilesComponent } from './components/listfiles/listfiles.component';
 import { CommiComponent } from './components/commi/commi.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
+import { UploadFileComponent } from './components/upload-file/upload-file.component';
+import { DownloadFileComponent } from './components/download-file/download-file.component';
 //import { ErrorComponent } from './components/error/error.component';
 //import { CsvimportComponent } from './components/csvimport/csvimport.component';
 //Guards
@@ -30,7 +32,9 @@ const adminRoutes: Routes = [
 			{path: 'upload-files', component: UploadFilesComponent},
 			{path: 'list-files', component: ListFilesComponent},
 			{path: 'commi', component: CommiComponent},
-			{path: 'noticias', component: NoticiasComponent}
+			{path: 'noticias', component: NoticiasComponent},
+			{path: 'subir-archivos', component: UploadFileComponent},
+			{path: 'bajar-archivos', component: DownloadFileComponent}
 		]
 	},
 	{path: 'listado-del-panel', component: ListComponent},
