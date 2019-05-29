@@ -13,8 +13,7 @@ import { CommiComponent } from './components/commi/commi.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { DownloadFileComponent } from './components/download-file/download-file.component';
-//import { ErrorComponent } from './components/error/error.component';
-//import { CsvimportComponent } from './components/csvimport/csvimport.component';
+import { UploadCsvComponent } from './components/uploadcsv/uploadcsv.component';
 //Guards
 import { AdminGuard } from '../app/services/admin.guard';
 
@@ -34,7 +33,8 @@ const adminRoutes: Routes = [
 			{path: 'commi', component: CommiComponent},
 			{path: 'noticias', component: NoticiasComponent},
 			{path: 'subir-archivos', component: UploadFileComponent},
-			{path: 'bajar-archivos', component: DownloadFileComponent}
+			{path: 'bajar-archivos', component: DownloadFileComponent},
+			{path: 'subir-csv', component: UploadCsvComponent}
 		]
 	},
 	{path: 'listado-del-panel', component: ListComponent},

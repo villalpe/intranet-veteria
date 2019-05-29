@@ -59,8 +59,8 @@
           </li>
           <li class="sidebar-dropdown">
             <a>
-              <i class="fa fa-tachometer-alt"></i>
-              <span>Contabilidad</span>
+              <i class="fa fa-credit-card"></i>
+              <span>Finanzas</span>
               <span class="badge badge-pill badge-warning">New</span>
             </a>
             <div class="sidebar-submenu">
@@ -79,12 +79,15 @@
                 <li>
                   <a href="#">Archivos PDF</a>
                 </li>
+                <li>
+                  <a [routerLink]="['subir-csv']">Subir CSV</a>
+                </li>
               </ul>
             </div>
           </li>
           <li class="sidebar-dropdown">
             <a>
-              <i class="fa fa-shopping-cart"></i>
+              <i class="fa fa-group"></i>
               <span>Recursos Humanos</span>
               <span class="badge badge-pill badge-danger">3</span>
             </a>
@@ -124,7 +127,7 @@
                 <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
                   <a [routerLink]="['list-files']">Listado de Archivos</a>
                 </li>
-                <li>
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
                   <a [routerLink]="['subir-archivos']">Subir Archivos</a>
                 </li>
                 <li>
@@ -138,7 +141,7 @@
           </li>
           <li class="sidebar-dropdown">
             <a>
-              <i class="fa fa-chart-line"></i>
+              <i class="fa fa-adjust"></i>
               <span>Comunicacion</span>
             </a>
             <div class="sidebar-submenu">
@@ -180,19 +183,19 @@
           <li>
             <a href="#">
               <i class="fa fa-book"></i>
-              <span>Documentation Calidad</span>
+              <span>Documentacion Calidad</span>
               <span class="badge badge-pill badge-primary">Beta</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
+              <i class="fa fa-tasks"></i>
+              <span>Produccion</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-folder"></i>
+              <i class="fa fa-area-chart"></i>
               <span>Business Intelligence</span>
             </a>
           </li>

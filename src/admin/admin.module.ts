@@ -20,6 +20,8 @@ import { CommiComponent } from './components/commi/commi.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { DownloadFileComponent } from './components/download-file/download-file.component';
+import { UploadCsvComponent } from './components/uploadcsv/uploadcsv.component';
+
 //import { ErrorComponent } from './components/error/error.component';
 //import { CsvimportComponent } from './components/csvimport/csvimport.component';
 
@@ -44,7 +46,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommiComponent,
     NoticiasComponent,
     UploadFileComponent,
-    DownloadFileComponent
+    DownloadFileComponent,
+    UploadCsvComponent
     //CsvimportComponent
   ],
   imports: [
@@ -72,7 +75,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommiComponent,
     NoticiasComponent,
     UploadFileComponent,
-    DownloadFileComponent
+    DownloadFileComponent,
+    UploadCsvComponent
     //ErrorComponent
     ]
 })
