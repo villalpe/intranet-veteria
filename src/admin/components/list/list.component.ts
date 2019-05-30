@@ -2,7 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 declare let $: any;
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Invoice } from '../../../app/models/invoice';
+import { UploadCsv } from '../../../app/models/uploadfilecsv';
 import { GLOBAL } from '../../../app/services/global';
 import { InvoiceService } from '../../../app/services/invoice.service';
 import { UserService } from '../../../app/services/user1.service';
@@ -19,7 +19,7 @@ export class ListComponent implements OnInit {
    public title: string;
    public url: string;
    public status: string;
-   public invoices: Invoice[];
+   public invoices: UploadCsv[];
    public token;
    public busqueda;
    public hide;
@@ -30,7 +30,7 @@ export class ListComponent implements OnInit {
    	  private _invoiceService: InvoiceService,
       private _userService: UserService
    	){
-   	  this.title = 'Listado Facturas Proveedor';
+   	  this.title = 'Antiguedad Saldos';
    	  this.url = GLOBAL.url;
       this.token = this._userService.getToken();
       this.hide = false;
@@ -40,7 +40,7 @@ export class ListComponent implements OnInit {
    ngOnInit(){
      this.getInvoices(); 
    }
-
+    //Este get esta apuntando a CSVImport puerto 5040
     getInvoices(){
       console.log('componente.listado funciona correctamente');
       this._invoiceService.getInvoices().subscribe(

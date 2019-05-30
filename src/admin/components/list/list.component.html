@@ -13,24 +13,30 @@
 	<table class="table table-hover table-striped" style="font-size: 12px;">
 		<thead class="thead-default thead-light">
 			<tr>
+				<th># Proveedor</th>
 				<th>Nombre Proveedor</th>
-				<th>Numero de factura</th>
-				<th>Descripcion</th>
-				<th>Total</th>
-				<th>Año</th>
+				<th>Saldo</th>
+				<th>Corriente</th>
+				<th>1-30</th>
+				<th>31-60</th>
+				<th>61-90</th>
+				<th>90-Mas</th>
 				<th>Mes</th>
-				<th>Pagado</th>
+				<th>Año</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor="let invoice of invoices | search: busqueda">
-				<td>{{invoice.name_provider}}</td>
-				<td>{{invoice.invoice_number}}</td>
-				<td>{{invoice.description}}</td>
-				<td>{{invoice.total}}</td>
-				<td>{{invoice.year}}</td>
-				<td>{{invoice.month}}</td>
-				<td>{{invoice.status}}</td>
+				<td>{{invoice.num_prov}}</td>
+				<td>{{invoice.nombre_prov}}</td>
+				<td>{{invoice.saldo}}</td>
+				<td>{{invoice.alcorr}}</td>
+				<td>{{invoice.d130}}</td>
+				<td>{{invoice.d3160}}</td>
+				<td>{{invoice.d6190}}</td>
+				<td>{{invoice.d91m}}</td>
+				<td>{{invoice.mes}}</td>
+				<td>{{invoice.ano}}</td>
 				<td>
 					<a [routerLink]="['/invoice', invoice._id]" class="btn btn-sm btn-success" style="font-size: 10px;">
 						<span class="glyphicon glyphicon-eye-open"></span>

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../models/user';
-import { GLOBAL } from './global';
+import { GLOBAL1 } from './global1';
 
 @Injectable()
 export class InvoiceService {
@@ -14,7 +14,7 @@ export class InvoiceService {
 	constructor(
 		private _http: Http
 	){
-		this.url = GLOBAL.url;
+		this.url = GLOBAL1.url;
 	}
 
 	addInvoice(token, invoice){
@@ -29,7 +29,7 @@ export class InvoiceService {
 	}
 
 	getInvoices(){
-		return this._http.get(this.url+'get-invoices').map(res => res.json());
+		return this._http.get(this.url+'getsaldos').map(res => res.json());
 	}
 
 	getInvoice(id){
