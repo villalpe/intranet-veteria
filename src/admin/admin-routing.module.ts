@@ -14,6 +14,7 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { DownloadFileComponent } from './components/download-file/download-file.component';
 import { UploadCsvComponent } from './components/uploadcsv/uploadcsv.component';
+import { IntroCompComponent } from './components/introcomp/introcomp.component';
 //Guards
 import { AdminGuard } from '../app/services/admin.guard';
 
@@ -34,7 +35,8 @@ const adminRoutes: Routes = [
 			{path: 'noticias', component: NoticiasComponent},
 			{path: 'subir-archivos', component: UploadFileComponent},
 			{path: 'bajar-archivos', component: DownloadFileComponent},
-			{path: 'subir-csv', component: UploadCsvComponent}
+			{path: 'subir-csv', component: UploadCsvComponent},
+			{path: 'introcomp', component: IntroCompComponent},
 		]
 	},
 	{path: 'listado-del-panel', component: ListComponent},
