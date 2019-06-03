@@ -16,6 +16,7 @@ import { DownloadFileComponent } from './components/download-file/download-file.
 import { UploadCsvComponent } from './components/uploadcsv/uploadcsv.component';
 import { IntroCompComponent } from './components/introcomp/introcomp.component';
 import { InduccionComponent } from './components/induccion/induccion.component';
+import { HistoriaComponent } from './components/historia/historia.component';
 //Guards
 import { AdminGuard } from '../app/services/admin.guard';
 
@@ -39,6 +40,7 @@ const adminRoutes: Routes = [
 			{path: 'subir-csv', component: UploadCsvComponent},
 			{path: 'introcomp', component: IntroCompComponent},
 			{path: 'induccion', component: InduccionComponent},
+			{path: 'historia', component: HistoriaComponent},
 		],
 	},
 	{path: 'listado-del-panel', component: ListComponent},

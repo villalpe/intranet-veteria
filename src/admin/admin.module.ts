@@ -24,6 +24,7 @@ import { DownloadFileComponent } from './components/download-file/download-file.
 import { UploadCsvComponent } from './components/uploadcsv/uploadcsv.component';
 import { IntroCompComponent } from './components/introcomp/introcomp.component';
 import { InduccionComponent } from './components/induccion/induccion.component';
+import { HistoriaComponent } from './components/historia/historia.component';
 
 //import { ErrorComponent } from './components/error/error.component';
 //import { CsvimportComponent } from './components/csvimport/csvimport.component';
@@ -52,7 +53,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DownloadFileComponent,
     UploadCsvComponent,
     IntroCompComponent,
-    InduccionComponent
+    InduccionComponent,
+    HistoriaComponent
     //CsvimportComponent
   ],
   imports: [
@@ -83,7 +85,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DownloadFileComponent,
     UploadCsvComponent,
     IntroCompComponent,
-    InduccionComponent
+    InduccionComponent,
+    HistoriaComponent
     //ErrorComponent
     ]
 })
