@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
 	public title: string;
 	public title1: string;
 	public user: User;
-  public status: string;
+  	public status: string;
   constructor(
   		private _route: ActivatedRoute,
   		private _router: Router,
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   	) {
   	this.title = 'Intranet Veteria Labs';
   	this.title1 = 'Veteria Labs';
-  	this.user = new User('','','','','','ROLE_USER','');
+  	this.user = new User('','','',0,'','','','','');
    }
 
   ngOnInit() {
@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
             //A this.user le doy el valor de response.user
             //this.user = response.user; 
             this.status = "success";
-            this.user = new User('','','','','','ROLE_USER','');
+  			this.user = new User('','','',0,'','','','','');
             registerForm.reset();
         }else{
             this.status = "error";

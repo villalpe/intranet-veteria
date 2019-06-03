@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   	) {
   	this.title = 'Intranet Veteria Labs';
   	this.title1 = 'Veteria Labs';
-    this.user = new User('','','','','','ROLE_USER','');
+    this.user = new User('','','',0,'','','','','');
    }
 
   ngOnInit() {

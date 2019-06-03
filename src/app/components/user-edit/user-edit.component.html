@@ -109,7 +109,7 @@
 		<div class="alert alert-danger" *ngIf="status == 'error'">
 			No se actualizaron correctamente los datos...vuelva a intentar
 		</div>
-        <form name="sentMessage" #userEditForm="ngForm" (ngSubmit)="onSubmit(userEditForm)">
+        <form name="userEditForm" #userEditForm="ngForm" (ngSubmit)="onSubmit(userEditForm)">
           <div class="control-group form-group">
             <div class="controls">
               <label>Name:</label>
@@ -127,6 +127,30 @@
           </div>
           <div class="control-group form-group">
             <div class="controls">
+              <label>EmpNumber:</label>
+              <input type="number" class="form-control" id="empNumber" required data-validation-required-message="Please enter your EmpNumber." name="empNumber" #empNumber="ngModel" [(ngModel)]="user.num_emp">
+              <span *ngIf="!empNumber.valid && empNumber.touched">El numero de empleado es obligatorio</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Department (select one):</label>
+              <select type="text" class="form-control" id="sel1" required data-validation-required-message="	Please enter your Department." name="depto" #depto="ngModel" [(ngModel)]="user.depto">>
+      				  <option value="Finanzas">Finanzas</option>
+      				  <option value="RH">RH</option>
+      				  <option value="Produccion">Produccion</option>
+      				  <option value="Calidad">Calidad</option>
+      				  <option value="Ventas">Ventas</option>
+      				  <option value="Marketing">Marketing</option>
+      				  <option value="Compliance">Compliance</option>
+      				  <option value="Direccion">Direccion</option>
+      				  <option value="Sistemas">Sistemas</option>
+      			  </select>
+              <span *ngIf="!depto.valid && depto.touched">El departamento es obligatorio!</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
               <label>Email Address:</label>
               <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address." name="email" #email="ngModel" [(ngModel)]="user.email">
               <span *ngIf="!email.valid && email.touched">El correo electronico es obligatorio</span>
@@ -135,13 +159,10 @@
           <div class="control-group form-group">
             <div class="controls">
               <label>Password:</label>
-              <input type="password" class="form-control" id="password" required data-validation-required-message="Please enter your password." name="password" #password="ngModel" [(ngModel)]="user.password">
+              <input type="password" class="form-control" id="phone" required data-validation-required-message="Please enter your password." name="password" #password="ngModel" [(ngModel)]="user.password">
               <span *ngIf="!password.valid && password.touched">El password es obligatorio</span>
             </div>
           </div>
-          <!--<div id="success"></div>-->
-          <!-- For success/fail messages -->
-          <!--<button type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!registerForm.form.valid">Registrarse</button>-->
 
           <!--User-Edit angular avanzado-->
           <div class="image_for_edit" *ngIf="user.image && user.image != 'null'">

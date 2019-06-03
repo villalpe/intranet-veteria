@@ -103,9 +103,27 @@
                 <li>
                   <a href="#">Dias Festivos</a>
                 </li>
-                <li>
-                  <a [routerLink]="['introcomp']">Induccion a la Empresa</a>
-                </li>
+                	<li class="sidebar-dropdown">
+	                <a>
+	              		<i class="fa fa-university"></i>
+	              		<span>Veteria Labs</span>
+	              		<span class="badge badge-pill badge-danger">3</span>
+	            	</a>
+	            	
+	            		<ul>
+			                <li>
+			                  <a [routerLink]="['introcomp']">Introduccion</a>
+			                </li>
+			                <li>
+			                  <a [routerLink]="['induccion']">Induccion</a>
+			                </li>
+			                <li>
+			                  <a [routerLink]="['induccion']">Historia</a>
+			                </li>
+	            		</ul>	
+
+
+	            </li>	
               </ul>
             </div>
           </li>
@@ -139,7 +157,7 @@
           <li class="sidebar-dropdown">
             <a>
               <i class="fa fa-adjust"></i>
-              <span>Comunicacion</span>
+              <span>Comunicacion Interna</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
@@ -179,14 +197,14 @@
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-book"></i>
+              <i class="fa fa-flask"></i>
               <span>Documentacion Calidad</span>
               <span class="badge badge-pill badge-primary">Beta</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-tasks"></i>
+              <i class="fa fa-gears"></i>
               <span>Produccion</span>
             </a>
           </li>
@@ -195,6 +213,28 @@
               <i class="fa fa-area-chart"></i>
               <span>Business Intelligence</span>
             </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a>
+              <i class="fa fa-keyboard-o"></i>
+              <span>Sistemas</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li *ngIf="identity && identity.role == 'ROLE_SISTEMAS'">
+                  <a href="#">Inventario Hardware</a>
+                </li>
+                <li>
+                  <a href="#">Inventario Software</a>
+                </li>
+                <li>
+                  <a href="#">Procedimientos</a>
+                </li>
+                <li>
+                  <a href="#">Memoria Tecnica</a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
