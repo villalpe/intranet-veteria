@@ -13,12 +13,12 @@
           El archivo ha sido enviado correctamente!
         </div>
         <div class="alert alert-danger" *ngIf="status == 'error'">
-          Hubo un error al tratar de enviar el archivo..vuelva a intentar
+          No selecciono archivo..por favor escoga un archivo .csv y vuelva a intentar
         </div>
     <form #formAddCSV="ngForm" (ngSubmit)="onSubmit()">
         <p>
           <label>Subir Archivo CSV</label>
-          <input type="file" placeholder="Subir archivo" (change)="fileChangeEvent($event)" accept=".csv" />
+          <input type="file" placeholder="Subir archivo" (change)="fileChangeEvent($event)" accept=".csv"/>
         </p>
 
         <input type="submit" name="" value="{{title1}}" class="btn btn-success" />

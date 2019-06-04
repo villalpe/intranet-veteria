@@ -2,7 +2,7 @@
 	<h3>{{title}}</h3>
 	<div class="row">
 		<div class="col-lg-1">Buscar:</div>		
-		<div class="col-lg-2">
+		<div class="col-lg-4">
 			<input type="text" [(ngModel)]="busqueda" />
 		</div>
 		<div class="label label-success" *ngIf="busqueda">
@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<br/>
-	<table class="table table-hover table-striped" style="font-size: 12px;">
+	<table class="table table-hover table-striped" style="font-size: 9px;">
 		<thead class="thead-default thead-light">
 			<tr>
 				<th># Proveedor</th>
@@ -29,24 +29,24 @@
 			<tr *ngFor="let invoice of invoices | search: busqueda">
 				<td>{{invoice.num_prov}}</td>
 				<td>{{invoice.nombre_prov}}</td>
-				<td>{{invoice.saldo}}</td>
-				<td>{{invoice.alcorr}}</td>
-				<td>{{invoice.d130}}</td>
-				<td>{{invoice.d3160}}</td>
-				<td>{{invoice.d6190}}</td>
-				<td>{{invoice.d91m}}</td>
+				<td>{{invoice.saldo.$numberDecimal | currency:'USD':true:'1.2-2'}}</td>
+				<td>{{invoice.alcorr.$numberDecimal | currency:'USD':true:'1.2-2'}}</td>
+				<td>{{invoice.d130.$numberDecimal | currency:'USD':true:'1.2-2'}}</td>
+				<td>{{invoice.d3160.$numberDecimal | currency:'USD':true:'1.2-2'}}</td>
+				<td>{{invoice.d6190.$numberDecimal | currency:'USD':true:'1.2-2'}}</td>
+				<td>{{invoice.d91m.$numberDecimal | currency:'USD':true:'1.2-2'}}</td>
 				<td>{{invoice.mes}}</td>
 				<td>{{invoice.ano}}</td>
 				<td>
-					<a [routerLink]="['/invoice', invoice._id]" class="btn btn-sm btn-success" style="font-size: 10px;">
+					<a [routerLink]="['/invoice', invoice._id]" class="btn btn-sm btn-success" style="font-size: 9px;">
 						<span class="glyphicon glyphicon-eye-open"></span>
 						Ver
 					</a>
-					<a [routerLink]="['/admin-panel/editar', invoice._id]" class="btn btn-sm btn-primary" style="font-size: 10px;">
+					<a [routerLink]="['/admin-panel/editar', invoice._id]" class="btn btn-sm btn-primary" style="font-size: 9px;">
 						<span class="glyphicon glyphicon-pencil"></span>
 						Editar
 					</a>
-					<a href="#myModal-{{invoice._id}}" role="button" data-toggle="modal" class="btn btn-sm btn-danger" style="font-size: 10px;">
+					<a href="#myModal-{{invoice._id}}" role="button" data-toggle="modal" class="btn btn-sm btn-danger" style="font-size: 9px;">
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						Eliminar
 					</a>

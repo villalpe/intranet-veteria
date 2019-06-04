@@ -94,7 +94,7 @@
                   <a [routerLink]="['rh']">Encuestas
                   </a>
                 </li>
-                <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN' || identity.role == 'ROLE_SISTEMAS'">
                   <a [routerLink]="['list-encuestas']">Analisis de Encuestas</a>
                 </li>
                 <li>

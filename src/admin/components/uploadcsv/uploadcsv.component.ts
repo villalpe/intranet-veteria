@@ -49,9 +49,12 @@ export class UploadCsvComponent implements OnInit {
   onSubmit(){
           //Subir el archivo CSV
       if(!this.filesToUpload){
-            this._router.navigate(['/admin-panel']);
+            this.status = 'error';
+            return false;
+            //this._router.navigate(['/admin-panel']);
           }else{
-          //Subida de la imagen
+          //Subida de archivo
+             this.status = 'success';
              this._uploadCsvService.makeFileRequest(this.url+'upload', [], this.filesToUpload, 'file')
                   .then((result: any) => {
                     console.log(result.file);

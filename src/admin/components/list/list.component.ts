@@ -30,7 +30,7 @@ export class ListComponent implements OnInit {
    	  private _invoiceService: InvoiceService,
       private _userService: UserService
    	){
-   	  this.title = 'Antiguedad Saldos';
+   	  this.title = 'Antiguedad de Saldos';
    	  this.url = GLOBAL.url;
       this.token = this._userService.getToken();
       this.hide = false;
