@@ -139,7 +139,7 @@
                   <a [routerLink]="['upload-files']">Carga de Archivos</a>
                   <span class="badge badge-pill badge-primary">Beta</span>
                 </li>
-                <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN' || identity.role == 'ROLE_SISTEMAS'">
                   <a [routerLink]="['list-files']">Listado de Archivos</a>
                 </li>
                 <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
@@ -221,7 +221,7 @@
             </a>
             <div class="sidebar-submenu">
               <ul>
-                <li *ngIf="identity && identity.role == 'ROLE_SISTEMAS'">
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN' || identity.role == 'ROLE_SISTEMAS'">
                   <a href="#">Inventario Hardware</a>
                 </li>
                 <li>
