@@ -1,0 +1,165 @@
+<div class="col-lg-10" style="font-size: 14px;margin-left: 240px;margin-top: -5px;" [@fadeLateral]>
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <!--<h1 class="mt-4 mb-3">
+      <small>{{title1}}</small>
+    </h1>-->
+
+    <!-- Poll Form -->
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+        <h3>Inventario Hardware Veteria Labs</h3>
+        <div class="alert alert-success" *ngIf="status == 'success'">
+			La Unidad de hardware ha sido enviada satisfactoriamente. Gracias..
+		</div>
+		<div class="alert alert-danger" *ngIf="status == 'error'">
+			Hubo un error al tratar de enviar la unidad de hardware..vuelva a intentar
+		</div>
+        <form name="InventarioHw" #invHwForm="ngForm" (ngSubmit)="onSumbit(invHwForm)">
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Nombre Activo:</label>
+              <input type="text" class="form-control" id="name_fa" required data-validation-required-message="Please write the name of the FA." name="name_fa" #name_fa="ngModel" [(ngModel)]="invhw.name_fa">
+              <span *ngIf="!name_fa.valid && name_fa.touched">Debe de escribir el nombre del Activo Fijo</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Tipo de Activo:</label>
+              <select type="text" class="form-control" id="sel1" required data-validation-required-message="Please  enter your Department." name="depto" #depto="ngModel" [(ngModel)]="invhw.type_fa">>
+                <option value="...">...</option>
+                <option value="Services">Services</option>
+                <option value="Sale Service">Sale Service</option>
+                <option value="Business Service">Business Service</option>
+                <option value="Support Service">Support Service</option>
+                <option value="IT Service">IT Service</option>
+                <option value="Backup Service">Backup Service</option>
+                <option value="Hardware">Hardware</option>
+                <option value="Computer">Computer</option>
+                <option value="Desktop">Desktop</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Server">Server</option>
+                <option value="Storage">Storage</option>
+                <option value="Disk">Disk</option>
+                <option value="Rack">Rack</option>
+                <option value="UPS">UPS</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Tablet">Tablet</option>                
+                <option value="Moinitor">Monitor</option>                
+                <option value="Printer">Printer</option>
+                <option value="Proyector">Proyector</option>
+                <option value="Scanner">Scanner</option>
+                <option value="Router">Router</option>
+                <option value="Switch">Switch</option>
+                <option value="Access Point">Access Point</option>
+                <option value="Firewall">Firewall</option>
+                <option value="Other Devices">Other Devices</option>                             
+              </select>
+              <span *ngIf="!type_fa.valid && type_fa.touched">Debe de seleccionar el tipo de activo</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Impacto:</label>
+              <p class="help-block"></p>
+              <select type="text" class="form-control" id="impact" required data-validation-required-message="Please  enter the impact." name="impact" #impact="ngModel" [(ngModel)]="invhw.impact">>
+                <option value="...">...</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+              <span *ngIf="!impact.valid && impact.touched">Debe de seleccionar que tipo de impacto tiene este activo</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Ubicacion:</label>
+              <input type="text" class="form-control" id="location" required data-validation-required-message="Please write the location." name="location" #location="ngModel" [(ngModel)]="invhw.location">
+              <span *ngIf="!location.valid && loaction.touched">Debe de escribir el lugar</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Gestionado Por:</label>
+              <input type="text" class="form-control" id="managedby" required data-validation-required-message="Please write managed by please." name="managedby" #managedby="ngModel" [(ngModel)]="invhw.managedby">
+              <span *ngIf="!managedby.valid && managedby.touched">Debe de escribir quien lo maneja</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Departamento:</label>
+              <p class="help-block"></p>
+              <select type="text" class="form-control" id="depto" required data-validation-required-message="Please  enter the department." name="depto" #depto="ngModel" [(ngModel)]="invhw.depto">>
+                <option value="...">...</option>
+                <option value="Finanzas">Finanzas</option>
+                <option value="RH">RH</option>
+                <option value="Produccion">Produccion</option>
+                <option value="Calidad">Calidad</option>
+                <option value="Ventas">Ventas</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Compliance">Compliance</option>
+                <option value="Asuntos Regulatorios">Asuntos Regulatorios</option>
+                <option value="Direccion">Direccion</option>
+                <option value="Sistemas">Sistemas</option>              </select>
+              <span *ngIf="!depto.valid && depto.touched">Debe de seleccionar el Departamento al que pertenece</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Año:</label>
+              <input type="text" class="form-control" id="year" required data-validation-required-message="Please write the year please." name="year" #year="ngModel" [(ngModel)]="invhw.year">
+              <span *ngIf="!year.valid && year.touched">Debe de colocar el año!</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Mes:</label>
+              <input type="text" class="form-control" id="month" required data-validation-required-message="Please write the month please." name="month" #month="ngModel" [(ngModel)]="invhw.month">
+              <span *ngIf="!month.valid && month.touched">Debe de colocar el mes!</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Usado por:</label>
+              <p class="help-block"></p>
+              <select type="text" class="form-control" id="usedby" required data-validation-required-message="Please  enter the department." name="usedby" #usedby="ngModel" [(ngModel)]="invhw.usedby">>
+                <option value="...">...</option>
+                <option value="Ariadna Ambario">Ariadna Ambario</option>
+                <option value="Jessica Perez">Jessica Perez</option>
+                <option value="Eduardo Robles">Eduardo Robles</option>
+                <option value="Mario Ontiveros">Mario Ontiveros</option>
+                <option value="Fernando Vazquez">Fernando Vazquez</option>
+                <option value="Michel Martinez">Michel Martinez</option>
+                <option value="Asuncion Saldivar">Asuncion Saldivar</option>
+                <option value="Claudia Hernandez">Claudia Hernandez</option>
+                <option value="Jesus Espinosa">Jesus Espinosa</option>
+                <option value="Manuel Cadena">Manuel Cadena</option>
+              </select>
+              <span *ngIf="!usedby.valid && usedby.touched">Debe de seleccionar quien lo usa</span>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Etiqueta de Activo:</label>
+              <input type="text" class="form-control" id="etiq_fa" required data-validation-required-message="Please write managed by please." name="etiq_fa" #etiq_fa="ngModel" [(ngModel)]="invhw.etiq_fa">
+              <span *ngIf="!etiq_fa.valid && etiq_fa.touched">Debe de escribir el # de etiqueta Activo Fijo</span>
+            </div>
+          </div>
+          <div id="success"></div>
+          <!-- For success/fail messages -->
+          <button type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!InventarioHw.form.valid">Enviar Activo Fijo</button>
+        </form>
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+</div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -25,6 +25,7 @@ import { UploadCsvComponent } from './components/uploadcsv/uploadcsv.component';
 import { IntroCompComponent } from './components/introcomp/introcomp.component';
 import { InduccionComponent } from './components/induccion/induccion.component';
 import { HistoriaComponent } from './components/historia/historia.component';
+import { InventarioHwComponent } from './components/inventario-hw/inventario-hw.component';
 
 //import { ErrorComponent } from './components/error/error.component';
 //import { CsvimportComponent } from './components/csvimport/csvimport.component';
@@ -54,7 +55,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UploadCsvComponent,
     IntroCompComponent,
     InduccionComponent,
-    HistoriaComponent
+    HistoriaComponent,
+    InventarioHwComponent
     //CsvimportComponent
   ],
   imports: [
@@ -86,7 +88,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UploadCsvComponent,
     IntroCompComponent,
     InduccionComponent,
-    HistoriaComponent
+    HistoriaComponent,
+    InventarioHwComponent
     //ErrorComponent
     ]
 })

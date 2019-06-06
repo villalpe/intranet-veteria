@@ -17,6 +17,8 @@ import { UploadCsvComponent } from './components/uploadcsv/uploadcsv.component';
 import { IntroCompComponent } from './components/introcomp/introcomp.component';
 import { InduccionComponent } from './components/induccion/induccion.component';
 import { HistoriaComponent } from './components/historia/historia.component';
+import { InventarioHwComponent } from './components/inventario-hw/inventario-hw.component';
+
 //Guards
 import { AdminGuard } from '../app/services/admin.guard';
 
@@ -41,6 +43,7 @@ const adminRoutes: Routes = [
 			{path: 'introcomp', component: IntroCompComponent},
 			{path: 'induccion', component: InduccionComponent},
 			{path: 'historia', component: HistoriaComponent},
+			{path: 'inventario-hw', component: InventarioHwComponent}
 		],
 	},
 	{path: 'listado-del-panel', component: ListComponent},

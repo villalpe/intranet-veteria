@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
             //A this.user le doy el valor de response.user
             //this.user = response.user; 
             this.status = "success";
-  			this.user = new User('','','',0,'','','','','');
+  			    this.user = new User('','','',0,'','','','','');
             registerForm.reset();
         }else{
             this.status = "error";

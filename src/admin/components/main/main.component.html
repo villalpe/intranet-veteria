@@ -222,7 +222,7 @@
             <div class="sidebar-submenu">
               <ul>
                 <li *ngIf="identity && identity.role == 'ROLE_ADMIN' || identity.role == 'ROLE_SISTEMAS'">
-                  <a href="#">Inventario Hardware</a>
+                  <a [routerLink]="['inventario-hw']">Inventario Hardware</a>
                 </li>
                 <li>
                   <a href="#">Inventario Software</a>
