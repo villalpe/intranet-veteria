@@ -35,7 +35,7 @@ export class UploadFilesComponent implements OnInit {
     ){
     this.title = 'Subir Archivos PDF';
     this.title1 = 'Subir archivo';
-    this.title2 = 'Veteria Labs';
+    this.title2 = 'The Antivenom Company™';
     this.url = GLOBAL.url;
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();

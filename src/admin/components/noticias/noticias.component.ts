@@ -23,7 +23,7 @@ export class NoticiasComponent implements OnInit {
   		private _userService: UserService,
   		) {
   	this.title = 'Noticias';
-  	this.title1 = 'Veteria Labs';
+  	this.title1 = 'The Antivenom Company™';
   	this.token = this._userService.getToken();
   	this.url = GLOBAL.url;
    }

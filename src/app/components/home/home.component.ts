@@ -17,8 +17,8 @@ export class HomeComponent implements OnInit {
     //private _router: Router,
     //private _userService: UserService
   	) {
-  	this.title = 'Intranet Veteria Labs';
-  	this.title1 = 'Veteria Labs';
+  	this.title = 'Intranet The Antivenom Company™';
+  	this.title1 = 'The Antivenom Company™';
   	//this.url = GLOBAL.url;
    }
 

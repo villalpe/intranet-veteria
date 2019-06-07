@@ -3,7 +3,7 @@
 
     <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3 breadcrumb">
-        <small>Panel Administracion Usuarios - Bienvenido</small>
+        <small>Panel Administracion Intranet The Antivenom Company™</small>
       </h1>
      </div>
    </div>
@@ -224,13 +224,13 @@
                 <li *ngIf="identity && identity.role == 'ROLE_ADMIN' || identity.role == 'ROLE_SISTEMAS'">
                   <a [routerLink]="['inventario-hw']">Inventario Hardware</a>
                 </li>
-                <li>
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN' || identity.role == 'ROLE_SISTEMAS'">
                   <a href="#">Inventario Software</a>
                 </li>
-                <li>
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN' || identity.role == 'ROLE_SISTEMAS'">
                   <a href="#">Procedimientos</a>
                 </li>
-                <li>
+                <li *ngIf="identity && identity.role == 'ROLE_ADMIN' || identity.role == 'ROLE_SISTEMAS'">
                   <a href="#">Memoria Tecnica</a>
                 </li>
               </ul>

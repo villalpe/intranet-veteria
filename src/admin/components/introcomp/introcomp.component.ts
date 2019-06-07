@@ -22,8 +22,8 @@ export class IntroCompComponent implements OnInit {
   		private _router: Router,
   		private _userService: UserService,
   		) {
-  	this.title = 'Introduccion a la compañia';
-  	this.title1 = 'Veteria Labs';
+  	this.title = 'Introduccion a la Compañia';
+  	this.title1 = 'The Antivenom Company™';
   	this.token = this._userService.getToken();
   	this.url = GLOBAL.url;
    }

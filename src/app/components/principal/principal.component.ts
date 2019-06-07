@@ -10,7 +10,7 @@ export class PrincipalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	this.title = 'Intranet Veteria Labs';
+  	this.title = 'Intranet The Antivenom Company™';
   }
 
 }

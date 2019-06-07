@@ -27,7 +27,7 @@ export class InventarioHwComponent implements OnInit {
   		private _invHwService: InvHwService
   		) {
   	this.title = 'Inventario Hardware';
-  	this.title1 = 'Veteria Labs';
+  	this.title1 = 'The Antivenom Company™';
   	this.invhw = new InvHw('','','','','','','',2019,1,true,'',0);
   	this.token = this._userService.getToken();
   	this.url = GLOBAL.url;

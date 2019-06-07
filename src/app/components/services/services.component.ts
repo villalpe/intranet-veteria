@@ -9,8 +9,8 @@ export class ServicesComponent implements OnInit {
   public title: string;
   public title1: string;
   constructor() { 
-  	this.title = 'Intranet Veteria Labs';
-  	this.title1 = 'Veteria Labs';
+  	this.title = 'Intranet The Antivenom Company™';
+  	this.title1 = 'The Antivenom Company™';
   }
 
   ngOnInit() {

@@ -23,7 +23,7 @@ export class HistoriaComponent implements OnInit {
   		private _userService: UserService,
   		) {
   	this.title = 'Historia de la Compañia';
-  	this.title1 = 'Veteria Labs';
+  	this.title1 = 'The Antivenom Company™';
   	this.token = this._userService.getToken();
   	this.url = GLOBAL.url;
    }
